@@ -4,3 +4,5 @@
 - [x] Verify navigation, certificates, hosted resume PDF, form validation, and mobile layout; local media requests were verified through the hosted asset service.
 - [x] Add the supplied portrait and expand verified content with richer colors and motion.
 - [x] Verify the updated portrait, expanded sections, and responsive layouts.
+- [ ] Refresh the professional color palette, visual hierarchy, and spacing without changing content or contact behavior.
+- [ ] Verify the refreshed layout and existing interactions.
