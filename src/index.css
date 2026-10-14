@@ -4,45 +4,51 @@
 
 @layer base {
   :root {
-    --background: 0 0% 99%;
-    --foreground: 225 13% 14%;
+    --background: 150 10% 99%;
+    --foreground: 160 9% 13%;
 
     --card: 0 0% 100%;
-    --card-foreground: 225 13% 14%;
+    --card-foreground: 160 9% 13%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 225 13% 14%;
+    --popover-foreground: 160 9% 13%;
 
-    --primary: 218 78% 46%;
+    --primary: 164 72% 27%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 220 20% 96%;
-    --secondary-foreground: 225 13% 14%;
+    --secondary: 150 10% 95%;
+    --secondary-foreground: 160 9% 13%;
 
-    --muted: 220 20% 96%;
-    --muted-foreground: 220 8% 43%;
+    --muted: 150 10% 95%;
+    --muted-foreground: 160 5% 40%;
 
-    --accent: 216 85% 96%;
-    --accent-foreground: 218 78% 40%;
+    --accent: 158 32% 93%;
+    --accent-foreground: 164 72% 24%;
 
     --destructive: 0 72% 43%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 220 14% 89%;
-    --input: 220 14% 85%;
-    --ring: 218 78% 46%;
+    --border: 150 9% 87%;
+    --input: 150 9% 79%;
+    --ring: 164 72% 27%;
 
-    --radius: 0.75rem;
+    --radius: 0.5rem;
 
-    --surface: 220 20% 97%;
+    --surface: 150 10% 96%;
     --surface-bright: 0 0% 100%;
-    --text-dim: 220 8% 43%;
-    --hero-rule: 220 16% 91%;
+    --text-dim: 160 5% 40%;
+    --hero-rule: 160 8% 26%;
     --success: 153 49% 32%;
     --warning: 30 70% 35%;
-    --portfolio-shadow: 0 12px 35px hsl(var(--foreground) / 0.045);
-    --portrait-shadow: 16px 18px 0 hsl(var(--accent)), 0 15px 45px hsl(var(--foreground) / 0.09);
-    --project-tint: 158 28% 95%;
+    --portfolio-shadow: 0 4px 20px hsl(var(--foreground) / 0.035);
+    --portrait-shadow: 0 20px 50px hsl(160 15% 4% / 0.3);
+    --project-tint: 158 24% 93%;
+    --hero-background: 160 10% 11%;
+    --hero-foreground: 150 12% 96%;
+    --hero-muted: 150 8% 70%;
+    --hero-primary: 158 53% 66%;
+    --hero-accent: 160 14% 18%;
+    --project-secondary: 210 22% 94%;
 
     --sidebar-background: 240 10% 6%;
     --sidebar-foreground: 0 0% 96%;
@@ -80,28 +86,45 @@
     font-family: 'Space Grotesk', sans-serif;
   }
   .portfolio-container { width: min(1160px, calc(100% - 48px)); margin-inline: auto; }
-  .section-space { padding-block: 88px; }
-  .section-label { font-size: 11px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: hsl(var(--primary)); }
+  .section-space { padding-block: 96px; }
+  .section-label { font-size: 11px; font-weight: 600; letter-spacing: 0; text-transform: uppercase; color: hsl(var(--primary)); display: flex; align-items: center; gap: 12px; }
+  .section-label::before { content: ''; width: 24px; height: 2px; background: hsl(var(--primary)); }
   .portfolio-card { box-shadow: var(--portfolio-shadow); }
-  .hero-grid { background: hsl(var(--background)); }
-  .hero-grid > .portfolio-container { position: relative; }
-  .hero-copy { width: 64%; padding-right: 32px; }
-  .portrait-wrap { position: absolute; right: 15px; top: 90px; width: 29%; margin: 0; }
-  .portrait-image { display: block; width: 100%; aspect-ratio: 0.78; object-fit: cover; border-radius: 8px; box-shadow: var(--portrait-shadow); }
-  .portrait-caption { margin-top: 35px; display: flex; align-items: center; justify-content: space-between; gap: 8px; font-size: 11px; color: hsl(var(--muted-foreground)); }
+  .hero-grid {
+    --background: var(--hero-background);
+    --foreground: var(--hero-foreground);
+    --muted-foreground: var(--hero-muted);
+    --primary: var(--hero-primary);
+    --primary-foreground: var(--hero-background);
+    --accent: var(--hero-accent);
+    --accent-foreground: var(--hero-foreground);
+    --border: var(--hero-rule);
+    --input: var(--hero-rule);
+    --ring: var(--hero-primary);
+    background: hsl(var(--background)); color: hsl(var(--foreground));
+  }
+  .hero-grid > .portfolio-container { display: grid; grid-template-columns: minmax(0, 1fr) 310px; column-gap: 72px; align-items: center; }
+  .hero-grid > .portfolio-container > div:last-child { grid-column: 1 / -1; }
+  .hero-copy { min-width: 0; }
+  .portrait-wrap { width: 100%; margin: 0; }
+  .portrait-image { display: block; width: 100%; aspect-ratio: 0.78; object-fit: cover; border-radius: 4px; box-shadow: var(--portrait-shadow); }
+  .portrait-caption { margin-top: 20px; padding-top: 16px; border-top: 1px solid hsl(var(--border)); display: flex; align-items: center; justify-content: space-between; gap: 8px; font-size: 11px; color: hsl(var(--muted-foreground)); }
   .portrait-caption span:first-child { color: hsl(var(--foreground)); }
   .project-card { transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease; }
   .project-card:hover { transform: translateY(-5px); box-shadow: 0 20px 45px hsl(var(--foreground) / .075); }
   .project-card:nth-child(2) > div:first-child { background: hsl(var(--project-tint)); }
-  .project-card:nth-child(3) > div:first-child { background: hsl(var(--accent)); }
+  .project-card:nth-child(3) > div:first-child { background: hsl(var(--project-secondary)); }
+  .project-card:first-child > div:first-child { --primary: var(--hero-primary); --muted-foreground: var(--hero-muted); background: hsl(var(--hero-background)); }
+  #skills .grid > div { transition: border-color .25s ease, transform .25s ease; }
+  #skills .grid > div:hover { border-color: hsl(var(--primary) / .4); transform: translateY(-3px); }
+  #skills .grid > div > svg { box-sizing: content-box; padding: 10px; background: hsl(var(--accent)); border-radius: 6px; }
   .section-title { font-family: 'Space Grotesk', sans-serif; font-size: 36px; line-height: 1.2; font-weight: 700; }
-  .skill-tag { border: 1px solid hsl(var(--border)); background: hsl(var(--card)); border-radius: 4px; padding: 6px 11px; font-size: 12px; }
+  .skill-tag { border: 1px solid hsl(var(--border)); background: hsl(var(--surface)); border-radius: 4px; padding: 6px 11px; font-size: 12px; }
   .contact-input { width: 100%; border: 1px solid hsl(var(--input)); border-radius: 6px; background: hsl(var(--card)); padding: 12px 14px; font-size: 14px; outline-offset: 2px; }
 }
 
 @media (max-width: 1023px) {
-  .hero-copy { width: 66%; padding-right: 22px; }
-  .portrait-wrap { width: 28%; right: 12px; top: 120px; }
+  .hero-grid > .portfolio-container { grid-template-columns: minmax(0, 1fr) 240px; column-gap: 36px; }
   .portrait-caption { flex-direction: column; align-items: flex-start; }
 }
 
@@ -109,8 +132,8 @@
   .portfolio-container { width: calc(100% - 40px); }
   .section-space { padding-block: 60px; }
   .section-title { font-size: 28px; }
-  .hero-copy { width: 100%; padding-right: 0; }
-  .portrait-wrap { position: relative; top: auto; right: auto; width: 180px; margin-top: 28px; }
+  .hero-grid > .portfolio-container { grid-template-columns: minmax(0, 1fr); }
+  .portrait-wrap { width: 180px; margin-top: 28px; }
   .portrait-caption { margin-top: 22px; }
 }
 @media (prefers-reduced-motion: reduce) {
