@@ -1,4 +1,4 @@
 # Portfolio refresh
 - [x] Verify uploaded content and publish document assets.
-- [ ] Build the light portfolio, accessible document previews, and email fallback.
-- [ ] Verify navigation, certificates, resume, form validation, and mobile layout.
+- [x] Build the light portfolio, accessible document previews, and email fallback.
+- [x] Verify navigation, certificates, hosted resume PDF, form validation, and mobile layout; local media requests were verified through the hosted asset service.
