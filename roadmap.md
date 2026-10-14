@@ -8,4 +8,5 @@
 - [x] Verify the refreshed layout and existing interactions; portrait verified through hosted assets, project overview and certificate dialog opened, and mobile navigation worked without overflow or runtime errors.
 - [x] Apply the requested consistent dark navy, charcoal, electric blue, and violet palette.
 - [x] Verify contrast, portrait rendering, and existing interactions with the dark palette; button contrast is 4.77:1, portrait loads, project and certificate controls work, and mobile navigation has no overflow or runtime errors.
-- [ ] Prepare the existing portfolio for GitHub Pages at `/aakash-s-dev-showcase/`, keeping its content and appearance unchanged.
+- [x] Prepare the existing portfolio for GitHub Pages at `/aakash-s-dev-showcase/`, keeping its content and appearance unchanged.
+- [ ] Verify the built output, paths, images, contact, and certificate flows; enable GitHub Pages via Actions in repository settings and confirm the workflow run.
