@@ -1,22 +1,11 @@
-import portrait from '@/assets/aakash-portrait.jpeg.asset.json';
-import resume from '@/assets/resume.pdf.asset.json';
-import oracle from '@/assets/oracle.jpg.asset.json';
-import infosys from '@/assets/infosys.jpg.asset.json';
-import nasscom from '@/assets/nasscom.pdf.asset.json';
-import nasscomPreview from '@/assets/nasscom.jpg.asset.json';
-import simplilearn from '@/assets/simplilearn.pdf.asset.json';
-import simplilearnPreview from '@/assets/simplilearn.jpg.asset.json';
-import sololearn from '@/assets/sololearn.pdf.asset.json';
-import sololearnPreview from '@/assets/sololearn.jpg.asset.json';
-import paper from '@/assets/paper.jpg.asset.json';
-import contest from '@/assets/contest.jpg.asset.json';
+import { staticAsset } from '@/lib/static-asset';
 
 // Verified content and document URLs live here; no placeholder project links.
 export const profile = {
   name: 'AAKASH K', role: 'Full Stack Developer', email: 'aakashit289@gmail.com',
   phone: '7010961039', location: 'Cuddalore, Tamil Nadu',
   github: 'https://github.com/Aakash-hash06', linkedin: 'https://linkedin.com/in/aakash06112005',
-  resume: resume.url, portrait: portrait.url,
+  resume: staticAsset('resume.pdf'), portrait: staticAsset('aakash-portrait.jpeg'),
 };
 export const skills = [
   { title: 'Programming', items: ['Python', 'Java (Basics)'], icon: 'code' },
@@ -35,22 +24,22 @@ export const projects = [
   {
     id: '02', title: 'AI-Driven System for Monitoring Expiry of Agriculture Products', kind: 'Paper presentation',
     description: 'Presented a paper at the 2026 International Conference on Intelligent Computing (IConIC), held on 27–28 March 2026 at Panimalar Engineering College.',
-    technologies: ['Academic research', 'IConIC 2026'], image: paper.url,
+    technologies: ['Academic research', 'IConIC 2026'], image: staticAsset('paper.jpg'),
     features: ['Paper presentation — not a production application', '27–28 March 2026'],
   },
   {
     id: '03', title: 'Attendance Automation Using Face Recognition', kind: 'Project contest participation',
     description: 'Participated in the project contest at PECTEAM ZKZ5, during the 8th International Conference for Phoenixes on Emerging Current Trends in Engineering and Management at Panimalar Engineering College.',
-    technologies: ['Academic project', 'PECTEAM ZKZ5'], image: contest.url,
+    technologies: ['Academic project', 'PECTEAM ZKZ5'], image: staticAsset('contest.jpg'),
     features: ['Project contest participation', '21–22 March 2025'],
   },
 ];
 export const certificates = [
-  { title: 'Oracle Cloud Infrastructure 2024 Generative AI Certified Professional', issuer: 'Oracle University', date: '22 July 2024', image: oracle.url, document: oracle.url, type: 'image', note: 'Printed validity ended 22 July 2026.', expired: true },
-  { title: 'Cybersecurity Analysis & Design', issuer: 'NASSCOM', date: '27 June 2024', image: nasscomPreview.url, document: nasscom.url, type: 'pdf', note: 'Gold category · Assessment score: 81.25%', identifier: 'FSP/2024/6/10175723' },
-  { title: 'Generative AI Foundations: IT Integration with Generative AI', issuer: 'Infosys Springboard', date: '23 September 2024', image: infosys.url, document: infosys.url, type: 'image', note: 'Course completed 23 September 2024.' },
-  { title: 'Introduction to Large Language Models', issuer: 'Simplilearn', date: '28 September 2024', image: simplilearnPreview.url, document: simplilearn.url, type: 'pdf', note: 'Course completion only; not an official Google Cloud Certification.', identifier: '7411949' },
-  { title: 'Introduction to Java', issuer: 'SoloLearn', date: '17 September 2024', image: sololearnPreview.url, document: sololearn.url, type: 'pdf', note: 'Course completion certificate.', identifier: 'CC-36MNSIWA' },
+  { title: 'Oracle Cloud Infrastructure 2024 Generative AI Certified Professional', issuer: 'Oracle University', date: '22 July 2024', image: staticAsset('oracle.jpg'), document: staticAsset('oracle.jpg'), type: 'image', note: 'Printed validity ended 22 July 2026.', expired: true },
+  { title: 'Cybersecurity Analysis & Design', issuer: 'NASSCOM', date: '27 June 2024', image: staticAsset('nasscom.jpg'), document: staticAsset('nasscom.pdf'), type: 'pdf', note: 'Gold category · Assessment score: 81.25%', identifier: 'FSP/2024/6/10175723' },
+  { title: 'Generative AI Foundations: IT Integration with Generative AI', issuer: 'Infosys Springboard', date: '23 September 2024', image: staticAsset('infosys.jpg'), document: staticAsset('infosys.jpg'), type: 'image', note: 'Course completed 23 September 2024.' },
+  { title: 'Introduction to Large Language Models', issuer: 'Simplilearn', date: '28 September 2024', image: staticAsset('simplilearn.jpg'), document: staticAsset('simplilearn.pdf'), type: 'pdf', note: 'Course completion only; not an official Google Cloud Certification.', identifier: '7411949' },
+  { title: 'Introduction to Java', issuer: 'SoloLearn', date: '17 September 2024', image: staticAsset('sololearn.jpg'), document: staticAsset('sololearn.pdf'), type: 'pdf', note: 'Course completion certificate.', identifier: 'CC-36MNSIWA' },
 ];
 export type Certificate = typeof certificates[number];
 
