@@ -41,6 +41,8 @@
     --success: 153 49% 32%;
     --warning: 30 70% 35%;
     --portfolio-shadow: 0 12px 35px hsl(var(--foreground) / 0.045);
+    --portrait-shadow: 16px 18px 0 hsl(var(--accent)), 0 15px 45px hsl(var(--foreground) / 0.09);
+    --project-tint: 158 28% 95%;
 
     --sidebar-background: 240 10% 6%;
     --sidebar-foreground: 0 0% 96%;
@@ -81,16 +83,35 @@
   .section-space { padding-block: 88px; }
   .section-label { font-size: 11px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: hsl(var(--primary)); }
   .portfolio-card { box-shadow: var(--portfolio-shadow); }
-  .hero-grid { background-image: linear-gradient(hsl(var(--hero-rule) / .65) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--hero-rule) / .65) 1px, transparent 1px); background-size: 80px 80px; }
+  .hero-grid { background: hsl(var(--background)); }
+  .hero-grid > .portfolio-container { position: relative; }
+  .hero-copy { width: 64%; padding-right: 32px; }
+  .portrait-wrap { position: absolute; right: 15px; top: 90px; width: 29%; margin: 0; }
+  .portrait-image { display: block; width: 100%; aspect-ratio: 0.78; object-fit: cover; border-radius: 8px; box-shadow: var(--portrait-shadow); }
+  .portrait-caption { margin-top: 35px; display: flex; align-items: center; justify-content: space-between; gap: 8px; font-size: 11px; color: hsl(var(--muted-foreground)); }
+  .portrait-caption span:first-child { color: hsl(var(--foreground)); }
+  .project-card { transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease; }
+  .project-card:hover { transform: translateY(-5px); box-shadow: 0 20px 45px hsl(var(--foreground) / .075); }
+  .project-card:nth-child(2) > div:first-child { background: hsl(var(--project-tint)); }
+  .project-card:nth-child(3) > div:first-child { background: hsl(var(--accent)); }
   .section-title { font-family: 'Space Grotesk', sans-serif; font-size: 36px; line-height: 1.2; font-weight: 700; }
   .skill-tag { border: 1px solid hsl(var(--border)); background: hsl(var(--card)); border-radius: 4px; padding: 6px 11px; font-size: 12px; }
   .contact-input { width: 100%; border: 1px solid hsl(var(--input)); border-radius: 6px; background: hsl(var(--card)); padding: 12px 14px; font-size: 14px; outline-offset: 2px; }
+}
+
+@media (max-width: 1023px) {
+  .hero-copy { width: 66%; padding-right: 22px; }
+  .portrait-wrap { width: 28%; right: 12px; top: 120px; }
+  .portrait-caption { flex-direction: column; align-items: flex-start; }
 }
 
 @media (max-width: 640px) {
   .portfolio-container { width: calc(100% - 40px); }
   .section-space { padding-block: 60px; }
   .section-title { font-size: 28px; }
+  .hero-copy { width: 100%; padding-right: 0; }
+  .portrait-wrap { position: relative; top: auto; right: auto; width: 180px; margin-top: 28px; }
+  .portrait-caption { margin-top: 22px; }
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
