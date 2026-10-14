@@ -49,6 +49,6 @@ export const certificates = [
   { title: 'Cybersecurity Analysis & Design', issuer: 'NASSCOM', date: '27 June 2024', image: nasscomPreview.url, document: nasscom.url, type: 'pdf', note: 'Gold category · Assessment score: 81.25%', identifier: 'FSP/2024/6/10175723' },
   { title: 'Generative AI Foundations: IT Integration with Generative AI', issuer: 'Infosys Springboard', date: '23 September 2024', image: infosys.url, document: infosys.url, type: 'image', note: 'Course completed 23 September 2024.' },
   { title: 'Introduction to Large Language Models', issuer: 'Simplilearn', date: '28 September 2024', image: simplilearnPreview.url, document: simplilearn.url, type: 'pdf', note: 'Course completion only; not an official Google Cloud Certification.', identifier: '7411949' },
-  { title: 'Introduction to Java', issuer: 'SoloLearn', date: '17 September 2024', image: sololearnPreview.url, document: sololearn.url, type: 'pdf', note: 'Course completion certificate.', identifier: 'CC-36MN5IWA' },
+  { title: 'Introduction to Java', issuer: 'SoloLearn', date: '17 September 2024', image: sololearnPreview.url, document: sololearn.url, type: 'pdf', note: 'Course completion certificate.', identifier: 'CC-36MNSIWA' },
 ];
 export type Certificate = typeof certificates[number];
